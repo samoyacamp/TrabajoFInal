@@ -82,7 +82,7 @@ public class UsuarioDAO {
         sentencia.setInt(1, user.getCodigo_usuarios());
         sentencia.setString(2, user.getNombre());
         sentencia.setString(3, user.getEmail());
-        sentencia.setString(4, user.getApellido());
+//        sentencia.setString(4, user.getApellido());
         sentencia.setString(5, user.getPassword());
         sentencia.setString(6, user.getDNI());
         sentencia.setString(7, user.getDomicilio());
