@@ -21,22 +21,6 @@ public class Prestamo {
     public Prestamo() {
     }
 
-//    public Prestamo(int id) {
-//        this.id = id;
-//    }
-    
-//    public Prestamo(int id){
-//    super(id);
-//    }
-//
-//    public int getId() {
-//        return id;
-//    }
-//
-//    public void setId(int id) {
-//        this.id = id;
-//    }
-
     public int getId() {
         return id;
     }
@@ -44,4 +28,7 @@ public class Prestamo {
     public void setId(int id) {
         this.id = id;
     }
+    
+    
+    
 }

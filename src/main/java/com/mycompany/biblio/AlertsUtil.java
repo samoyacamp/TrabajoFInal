@@ -11,23 +11,47 @@ import javafx.scene.control.Alert;
  *
  * @author sergi
  */
- public class AlertsUtil {
- 
+public class AlertsUtil {
+
+    /**
+     *
+     * @param mensaje Metodo que Muestra error
+     */
     public static void mostrarError(String mensaje) {
         Alert alerta = new Alert(Alert.AlertType.ERROR);
         alerta.setContentText(mensaje);
         alerta.show();
     }
+
+    /**
+     *
+     * @param mensaje Metodo que muestra informacion
+     */
     public static void mostrarInformacion(String mensaje) {
         Alert alerta = new Alert(Alert.AlertType.INFORMATION);
         alerta.setContentText(mensaje);
         alerta.show();
     }
-     public static void mostrarConfi(String mensaje) {
+
+    /**
+     *
+     * @param mensaje Metood que muestra que ha pasado algo
+     */
+    public static void mostrarConfi(String mensaje) {
         Alert alerta = new Alert(Alert.AlertType.NONE);
         alerta.setContentText(mensaje);
         alerta.show();
     }
+
+    /**
+     *
+     * @param mensaje Metodo que muestra confirmacion
+     */
+
+    public static void mostrarSeguro(String mensaje) {
+        Alert alerta = new Alert(Alert.AlertType.CONFIRMATION);
+        alerta.setContentText(mensaje);
+        alerta.show();
+    }
+
 }
-
-

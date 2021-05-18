@@ -9,6 +9,10 @@ package com.mycompany.biblio.modelos;
  *
  * @author sergi
  */
+/**
+ * 
+ * Enum para ver la cantidad de generos que tienen los libros 
+ */
 public enum Genero {
-       Perretes, Mancha, Tronos, King, Potter, Dan, Cohelo
+    Humanidades,Formación,Idiomas,Literatura,Infantil,Comics,DibujitosChinos,Juvenil,Artes,Filología,Cocina
 }

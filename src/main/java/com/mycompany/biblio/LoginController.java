@@ -23,6 +23,7 @@ import java.sql.SQLException;
  * @author sergi
  */
 public class LoginController {
+
     private static Usuario user;
     private static UsuarioDAO udao;
     @FXML
@@ -34,10 +35,17 @@ public class LoginController {
     @FXML
     private ImageView imagen;
 
+    /**
+     *
+     * @throws SQLException
+     * @throws IOException
+     * @throws ClassNotFoundException Metodo del login el cual mira todos los
+     * requisitos al usuario que le demos para ver si puede pasar a la isguiente
+     * ventana
+     */
     @FXML
     private void login() throws SQLException, IOException, ClassNotFoundException {
         //String usuario = nombre.getText();
-        UsuarioDAO login = new UsuarioDAO();
         //Usuario u = new Usuario(-1, nombre.getText(), email.getText(), pwd.getText());
         //u.checkNombre(usuario);
         //UsuarioDAO x = new UsuarioDAO();
@@ -46,46 +54,34 @@ public class LoginController {
         //x.checkBDUsuario(u.getNombre());
         //boolean correcto = x.checkBDUsuario(u.toString());
         // DriverManager.println(String.valueOf(correcto));
+        UsuarioDAO login = new UsuarioDAO();
         String user = nombre.getText();
         String pass = pwd.getText();
         String correo = email.getText();
+
         boolean ok = true;
-        boolean vale =true;
-        
-        
+        boolean vale = true;
+
         try {
             login.conectar();
-            
+
             ok = login.checkBDAdmin(user, correo, pass);
             vale = login.checkBDUsuario(user, correo, pass);
             if (ok) {
                 App.loadLibrosWindow();
-             
+
                 //AlertsUtil.mostrarConfi("Correcto");
-            }
-            else if(vale)
-            {
+            } else if (vale) {
                 App.loadPrestaWindow();
             }
         } catch (SQLException e) {
             AlertsUtil.mostrarConfi("Algo ha pasado mal");
 
         }
-//        if (ok=login.checkBDUsuario(Usuario, pass, correo)) {
-//            AlertsUtil.mostrarInformacion("correcto");
-//            App.setUsuario(u);
-//            try {
-//                App.loadLibrosWindow();
-//            } catch (IOException e) {
-//                AlertsUtil.mostrarError(e.getMessage());
-//            }
-//        } else {
-//            AlertsUtil.mostrarError("incorrecto");
-//        }
-
         if (nombre.getText().isEmpty()) {
             AlertsUtil.mostrarError("no se ha pueto ningun nombre");
         }
+
         if (email.getText().isEmpty()) {
             AlertsUtil.mostrarError("no se ha puesto ningun email");
         }
@@ -95,34 +91,15 @@ public class LoginController {
 
     }
 
+    /**
+     *
+     * @throws IOException metodo para llevarnos a la ventana de registrar
+     */
     @FXML
     private void register() throws IOException {
-//        try {
+
         App.loadRegisterWindow();
-//        } catch (IOException e) {
-//            AlertsUtil.mostrarError("Algo ha pasao");
-//        }
+
     }
-//    public LoginController(Usuario u){
-//        user = u;
-//        conectarBD();
-//    }
-//    
-// public void loadImage(){
-//        Image img = new Image(getClass().getResourceAsStream("/images/foto.jpg"));
-//        imagen.setImage(img);
-//    }
-// private static void conectarBD() {
-//        udao = new UsuarioDAO();
-//        try {
-//            udao.conectar();
-//        } catch (SQLException sqle) {
-//            AlertsUtil.mostrarError("Error al conectar con la base de datos" + sqle.getMessage());
-//        } catch (ClassNotFoundException cnfe) {
-//            AlertsUtil.mostrarError("Error al iniciar la aplicación");
-//        } catch (IOException ioe) {
-//            AlertsUtil.mostrarError("Error al cargar la configuración");
-//        }
-//
-//    }
+
 }

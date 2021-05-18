@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.layout.*?>
 <?import java.lang.*?>
@@ -15,17 +17,25 @@
          <items>
             <AnchorPane prefHeight="198.0" prefWidth="283.0" style="-fx-background-color: #5D6D7E;">
                <children>
-                  <ListView fx:id="listaLibro" layoutX="49.0" prefHeight="262.0" prefWidth="930.0" />
+                  <ListView fx:id="listaLibro" layoutX="62.0" prefHeight="262.0" prefWidth="936.0" />
                </children>
             </AnchorPane>
          </items>
       </SplitPane>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+      <AnchorPane prefHeight="288.0" prefWidth="1066.0">
          <children>
-            <Button layoutX="494.0" layoutY="63.0" mnemonicParsing="false" text="Button" />
-            <Button fx:id="pedir" layoutX="473.0" layoutY="108.0" mnemonicParsing="false" onAction="#pedir" text="Pedir Prestado" />
-            <Button fx:id="back" layoutX="475.0" layoutY="153.0" mnemonicParsing="false" onAction="#back" text="Devolver libro" />
-            <TextField fx:id="id" layoutX="434.0" layoutY="25.0" prefHeight="25.0" prefWidth="183.0" />
+            <Button fx:id="pedir" layoutX="306.0" layoutY="87.0" mnemonicParsing="false" onAction="#pedir" prefHeight="40.0" prefWidth="96.0" text="Pedir Prestado" />
+            <Button fx:id="back" layoutX="306.0" layoutY="137.0" mnemonicParsing="false" onAction="#back" prefHeight="40.0" prefWidth="96.0" text="Devolver libro" />
+            <TextField fx:id="id" layoutX="234.0" layoutY="50.0" prefHeight="25.0" prefWidth="168.0" />
+            <Button fx:id="sesion" layoutX="533.0" layoutY="63.0" mnemonicParsing="false" onAction="#sesion" text="Cerrar Sesión" />
+            <Button fx:id="salir" layoutX="533.0" layoutY="95.0" mnemonicParsing="false" onAction="#salir" prefHeight="25.0" prefWidth="87.0" text="Salir" />
+            <ImageView fx:id="img1" fitHeight="40.0" fitWidth="62.0" layoutX="232.0" layoutY="87.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="img2" fitHeight="40.0" fitWidth="62.0" layoutX="232.0" layoutY="137.0" pickOnBounds="true" preserveRatio="true" />
+            <Label layoutX="246.0" layoutY="13.0" prefHeight="25.0" prefWidth="145.0" text="Poner ID del libro:" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
     </children>

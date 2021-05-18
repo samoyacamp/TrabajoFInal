@@ -1,26 +1,13 @@
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.mycompany.biblio.modelos;
 
 /**
  *
  * @author sergi
  */
-//Codigo_Usuarios INT NOT NULL UNIQUE auto_increment,
-//Nombre  VARCHAR(45) NOT NULL,
-//Email VARCHAR(45)NOT NULL,
-//Pwd VARCHAR(45) NOT NULL,
-//Apellido VARCHAR(45),
-//DNI  VARCHAR(45) NOT NULL,
-//Domicilio VARCHAR(45),
-//Ciudad VARCHAR(45),
-//Provincia VARCHAR(45),
-//Puesto VARCHAR(45),
+
 public class Usuario {
+
     private int codigo_usuarios;
     private String nombre;
     private String email;
@@ -31,6 +18,18 @@ public class Usuario {
     private String ciudad;
     private String provincia;
 
+    /**
+     *
+     * @param codigo_usuarios
+     * @param nombre
+     * @param email
+     * @param password
+     * @param apellido
+     * @param DNI
+     * @param domicilio
+     * @param ciudad
+     * @param provincia
+     */
     public Usuario(int codigo_usuarios, String nombre, String email, String password, String apellido, String DNI, String domicilio, String ciudad, String provincia) {
         this.codigo_usuarios = codigo_usuarios;
         this.nombre = nombre;
@@ -42,8 +41,11 @@ public class Usuario {
         this.ciudad = ciudad;
         this.provincia = provincia;
     }
-    
 
+    /**
+     *
+     * @return
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -52,13 +54,6 @@ public class Usuario {
         sb.append('}');
         return sb.toString();
     }
-
-//    public Usuario(int id, String nombre, String email, String password) {
-//        this.nombre = nombre;
-//        this.email = email;
-//        this.password = password;
-//        this.codigo_usuarios = id;
-//    }
 
     public Usuario() {
     }
@@ -97,33 +92,52 @@ public class Usuario {
     public String getPassword() {
         return password;
     }
-    
+
+    /**
+     *
+     * @param password
+     */
     public void setPassword(String password) {
         this.password = password;
     }
-    
-    
-        public boolean checkNombre(String nombre){
+
+    /**
+     *
+     * @param nombre
+     * @return Metodo para comprobar que el nombre es mayor o igual que 6
+     */
+    public boolean checkNombre(String nombre) {
         return nombre.length() >= 6;
     }
-    
-    public  boolean checkEmail(String email){
+
+    /**
+     *
+     * @param email
+     * @return Metodo para comprobar que el email tiene un @ y un .
+     */
+    public boolean checkEmail(String email) {
         //return email.matches("@+");
         boolean ok = false;
-        if (email.matches("[-\\w\\.]+@\\w+\\.\\w+")) 
+        if (email.matches("[-\\w\\.]+@\\w+\\.\\w+")) {
             ok = true;
-        return ok;
-    }
-    
-    
-    public boolean checkPassword(String pwd){
-     boolean ok = false;
-        if (pwd.matches(".*[A-Z].*") && pwd.length() >=8) 
-            ok = true;
+        }
         return ok;
     }
 
-   
+    /**
+     *
+     * @param pwd
+     * @return Metodo con expresión regular para comprobar que la contraseña
+     * Empieza por mayusucla y es mayor que 8
+     */
+    public boolean checkPassword(String pwd) {
+        boolean ok = false;
+        if (pwd.matches(".*[A-Z].*") && pwd.length() >= 8) {
+            ok = true;
+        }
+        return ok;
+    }
+
     /**
      * @return the codigo_usuarios
      */
@@ -138,45 +152,84 @@ public class Usuario {
         this.codigo_usuarios = codigo_usuarios;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getApellido() {
         return apellido;
     }
 
+    /**
+     *
+     * @param apellido
+     */
     public void setApellido(String apellido) {
         this.apellido = apellido;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getDNI() {
         return DNI;
     }
 
+    /**
+     *
+     * @param DNI
+     */
     public void setDNI(String DNI) {
         this.DNI = DNI;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getDomicilio() {
         return domicilio;
     }
 
+    /**
+     *
+     * @param domicilio
+     */
     public void setDomicilio(String domicilio) {
         this.domicilio = domicilio;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getCiudad() {
         return ciudad;
     }
 
+    /**
+     *
+     * @param ciudad
+     */
     public void setCiudad(String ciudad) {
         this.ciudad = ciudad;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getProvincia() {
         return provincia;
     }
 
+    /**
+     *
+     * @param provincia
+     */
     public void setProvincia(String provincia) {
         this.provincia = provincia;
     }
-
 
 }

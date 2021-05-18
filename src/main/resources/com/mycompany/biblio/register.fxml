@@ -13,113 +13,61 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.geometry.Insets?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="553.0" style="-fx-background-color: #2c3e50;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="902.0" prefWidth="1016.0" style="-fx-background-color: #2c3e50;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <AnchorPane prefHeight="116.0" prefWidth="546.0">
          <children>
-            <Label layoutX="213.0" layoutY="27.0" prefHeight="83.0" prefWidth="194.0" text="Sing Up" textAlignment="CENTER" textFill="#f8efef">
+            <Label layoutX="365.0" layoutY="27.0" prefHeight="83.0" prefWidth="194.0" text="Sing Up" textAlignment="CENTER" textFill="#f8efef">
                <font>
                   <Font size="50.0" />
                </font>
             </Label>
             <TextField fx:id="codigo_usuarios" layoutX="45.0" layoutY="43.0" visible="false" />
-            <TextField fx:id="codigo_usuarios" layoutX="45.0" layoutY="56.0" text="53" />
+            <ImageView fx:id="image6" fitHeight="109.0" fitWidth="140.0" layoutX="205.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true" />
          </children>
       </AnchorPane>
-      <AnchorPane prefHeight="260.0" prefWidth="361.0">
+      <AnchorPane prefHeight="363.0" prefWidth="1159.0">
          <children>
-            <GridPane layoutX="107.0" layoutY="62.0" prefHeight="338.0" prefWidth="361.0" AnchorPane.bottomAnchor="-62.0" AnchorPane.leftAnchor="107.0">
-               <children>
-                  <Label text="Ciudad" textFill="WHITE" GridPane.rowIndex="6">
-                     <GridPane.margin>
-                        <Insets left="5.0" />
-                     </GridPane.margin>
-                  </Label>
-                  <Label text="Provincia" textFill="WHITE" GridPane.rowIndex="7">
-                     <GridPane.margin>
-                        <Insets left="5.0" />
-                     </GridPane.margin>
-                  </Label>
-                  <Label text="Puesto" textFill="WHITE" GridPane.rowIndex="8">
-                     <GridPane.margin>
-                        <Insets left="5.0" />
-                     </GridPane.margin>
-                  </Label>
-                  <Label text="Nombre" textFill="WHITE">
-                     <GridPane.margin>
-                        <Insets left="5.0" />
-                     </GridPane.margin>
-                  </Label>
-                  <Label text="Apellido" textFill="WHITE" GridPane.rowIndex="1">
-                     <GridPane.margin>
-                        <Insets left="5.0" />
-                     </GridPane.margin>
-                  </Label>
-                  <Label text="Email" textFill="WHITE" GridPane.rowIndex="2">
-                     <GridPane.margin>
-                        <Insets left="5.0" />
-                     </GridPane.margin>
-                  </Label>
-                  <Label text="Contraseña" textFill="WHITE" GridPane.rowIndex="3">
-                     <GridPane.margin>
-                        <Insets left="5.0" />
-                     </GridPane.margin>
-                  </Label>
-                  <Label text="DNI" textFill="WHITE" GridPane.rowIndex="4">
-                     <GridPane.margin>
-                        <Insets left="5.0" />
-                     </GridPane.margin>
-                  </Label>
-                  <Label text="Domicilio" textFill="WHITE" GridPane.rowIndex="5">
-                     <GridPane.margin>
-                        <Insets left="5.0" />
-                     </GridPane.margin>
-                  </Label>
-                  <TextField fx:id="nombre" text="asdas" GridPane.columnIndex="1" />
-                  <TextField fx:id="apellido" text="asdas" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <TextField fx:id="email" text="fasfasfa" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <TextField fx:id="DNI" text="fasfas" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                  <TextField fx:id="domicilio" text="afsasf" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                  <TextField fx:id="ciudad" text="asfasfa" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-                  <TextField fx:id="provincia" text="asfas" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-                  <TextField fx:id="puesto" text="asdasda" GridPane.columnIndex="1" GridPane.rowIndex="8" />
-                  <PasswordField fx:id="pwd" text="paco123" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-               </children>
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-            </GridPane>
+            <TextField fx:id="nombre" layoutX="359.0" layoutY="34.0" text="asdas" />
+            <TextField fx:id="apellido" layoutX="359.0" layoutY="64.0" text="asdas" />
+            <TextField fx:id="email" layoutX="359.0" layoutY="95.0" text="fasfasfa" />
+            <PasswordField fx:id="pwd" layoutX="359.0" layoutY="124.0" text="paco123" />
+            <TextField fx:id="DNI" layoutX="359.0" layoutY="154.0" text="fasfas" />
+            <TextField fx:id="domicilio" layoutX="359.0" layoutY="187.0" text="afsasf" />
+            <TextField fx:id="ciudad" layoutX="359.0" layoutY="222.0" text="asfasfa" />
+            <TextField fx:id="provincia" layoutX="359.0" layoutY="256.0" text="asfas" />
+            <Label layoutX="275.0" layoutY="38.0" text="Nombre" textFill="WHITE" />
+            <Label layoutX="275.0" layoutY="68.0" text="Apellido" textFill="WHITE" />
+            <Label layoutX="283.0" layoutY="99.0" text="Email" textFill="WHITE" />
+            <Label layoutX="268.0" layoutY="128.0" text="Contraseña" textFill="WHITE" />
+            <Label layoutX="287.0" layoutY="158.0" text="DNI" textFill="WHITE" />
+            <Label layoutX="272.0" layoutY="191.0" text="Domicilio" textFill="WHITE" />
+            <Label layoutX="280.0" layoutY="226.0" text="Ciudad" textFill="WHITE" />
+            <Label layoutX="273.0" layoutY="260.0" text="Provincia" textFill="WHITE" />
+            <TextField fx:id="codigo_usuarios" layoutX="359.0" layoutY="290.0" text="53" visible="false" />
          </children>
       </AnchorPane>
-      <Button fx:id="volver" mnemonicParsing="false" onAction="#volver" text="Volver" textAlignment="CENTER">
-         <effect>
-            <Reflection topOpacity="0.23">
-               <input>
-                  <SepiaTone level="0.23" />
-               </input>
-            </Reflection>
-         </effect>
-      </Button>
-      <Button fx:id="addUser" mnemonicParsing="false" onAction="#addUser" text="Registrar" textAlignment="CENTER">
-         <effect>
-            <Reflection topOpacity="0.23">
-               <input>
-                  <SepiaTone level="0.23" />
-               </input>
-            </Reflection>
-         </effect>
-      </Button>
+      <AnchorPane prefHeight="70.0" prefWidth="1093.0">
+         <children>
+            <Button fx:id="addUser" layoutX="343.0" layoutY="2.0" mnemonicParsing="false" onAction="#addUser" text="Registrar" textAlignment="CENTER">
+               <effect>
+                  <Reflection topOpacity="0.23">
+                     <input>
+                        <SepiaTone level="0.23" />
+                     </input>
+                  </Reflection>
+               </effect>
+            </Button>
+            <Button fx:id="volver" layoutX="350.0" layoutY="49.0" mnemonicParsing="false" onAction="#volver" text="Volver" textAlignment="CENTER">
+               <effect>
+                  <Reflection topOpacity="0.23">
+                     <input>
+                        <SepiaTone level="0.23" />
+                     </input>
+                  </Reflection>
+               </effect>
+            </Button>
+         </children>
+      </AnchorPane>
    </children>
 </VBox>

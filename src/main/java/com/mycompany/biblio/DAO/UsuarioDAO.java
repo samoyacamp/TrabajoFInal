@@ -24,9 +24,20 @@ import java.util.Properties;
  * @author sergi
  */
 public class UsuarioDAO {
-    
+
+    /**
+     * Atributo que accede a Conecction que ejecuta las ordenes que se reciven
+     * del sql
+     */
     private Connection conexion;
 
+    /**
+     *
+     * @throws ClassNotFoundException
+     * @throws SQLException
+     * @throws IOException Metodo para conectar a la base de datos accediendo
+     * por el fichero de conexion a la base de datos
+     */
     public void conectar() throws ClassNotFoundException, SQLException, IOException {
 
         Properties configuration = new Properties();
@@ -45,6 +56,15 @@ public class UsuarioDAO {
         conexion.close();
     }
 
+    /**
+     *
+     * @param nombre
+     * @param email
+     * @param pwd
+     * @return
+     * @throws SQLException Metodo que verifica que el admin esta en la base de
+     * datos
+     */
     public boolean checkBDAdmin(String nombre, String email, String pwd) throws SQLException {
         String sql = "SELECT * FROM USUARIOS WHERE Nombre=? AND Pwd=? AND email=? AND PUESTO='admin' LIMIT 1";
         PreparedStatement sentencia = conexion.prepareStatement(sql);
@@ -56,7 +76,16 @@ public class UsuarioDAO {
         return resultado.next();
 
     }
-    
+
+    /**
+     *
+     * @param nombre
+     * @param email
+     * @param pwd
+     * @return
+     * @throws SQLException Metodo que verifica que el usuario esta en la base
+     * de datos
+     */
     public boolean checkBDUsuario(String nombre, String email, String pwd) throws SQLException {
         String sql = "SELECT * FROM USUARIOS WHERE Nombre=? AND Pwd=? AND email=? LIMIT 1";
         PreparedStatement sentencia = conexion.prepareStatement(sql);
@@ -67,15 +96,12 @@ public class UsuarioDAO {
 
         return resultado.next();
     }
-//        private String nombre;
-//    private String email;
-//    private String password;
-//    private String apellido;
-//    private String DNI;
-//    private String domicilio;
-//    private String ciudad;
-//    private String provincia;
-//    private String puesto;
+
+    /**
+     *
+     * @param user
+     * @throws SQLException Metodo para añadir usuario a la base de datos
+     */
     public void addUsuario(Usuario user) throws SQLException {
         String sql = "{call spNewUser (?,?,?,?,?,?,?,?,?)}";
         PreparedStatement sentencia = conexion.prepareStatement(sql);

@@ -21,10 +21,9 @@ public class UsuarioTest {
     }
 
     /**
-     * Test of checkPassword method, of class Usuario.
+     * Test of checkPassword method, of class Usuario. Test para comprobar que
+     * el metodo boolean funciona
      */
-//    @DisplayName("Mis test de password")
-//    class TestPWD {
     @Test
     @DisplayName("Test que siempre es correcto en password")
     public void testCheckPasswordtrue() {
@@ -34,6 +33,10 @@ public class UsuarioTest {
         assertTrue(result);
     }
 
+    /**
+     * Test of checkPassword method, of class Usuario. Test para comprobar que
+     * el metodo boolean funciona
+     */
     @Test
     @DisplayName("Test que siempre falla en password")
     public void testCheckPasswordfake() {
@@ -43,6 +46,10 @@ public class UsuarioTest {
         assertFalse(result);
     }
 
+    /**
+     * Test of checkEmail method, of class Usuario. Test para comprobar que
+     * el metodo boolean funciona
+     */
     @Test
     @DisplayName("Test de email que siempre sale bien")
     public void testEmailCorrecto() {
@@ -52,6 +59,10 @@ public class UsuarioTest {
         assertTrue(result);
     }
 
+    /**
+     * Test of checkEmail method, of class Usuario. Test para comprobar que
+     * el metodo boolean funciona
+     */
     @Test
     @DisplayName("Test de email que siempre sale mal")
     public void testEmailFalso() {
@@ -61,11 +72,28 @@ public class UsuarioTest {
         assertFalse(result);
     }
 
+    /**
+     * Test of checkNombre method, of class Usuario. Test para comprobar que
+     * el metodo boolean funciona
+     */
     @Test
     @DisplayName("Test de nombre que siempre sale mal")
     public void testNombreCorrecto() {
         String nombre = "Pacopaco";
-        
-    }
+        Usuario instance = new Usuario();
+        boolean result = instance.checkNombre(nombre);
+        assertTrue(result);
 
+    }
+     /**
+     * Test of checkNombre method, of class Usuario. Test para comprobar que
+     * el metodo boolean funciona
+     */
+    @Test
+    @DisplayName("Test de nombre que siempre sale mal")
+    public void testNombreinCorrecto() {String nombre = "Pacopaco";
+        Usuario instance = new Usuario();
+        boolean result = instance.checkNombre(nombre);
+        assertFalse(result);
+    }
 }

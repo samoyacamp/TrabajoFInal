@@ -22,8 +22,19 @@ import java.util.Properties;
  */
 public class RegisterDAO {
 
+    /**
+     * Atributo que accede a Conecction que ejecuta las ordenes que se reciven
+     * del sql
+     */
     private Connection conexion;
 
+    /**
+     *
+     * @throws ClassNotFoundException
+     * @throws SQLException
+     * @throws IOException Metodo para conectar a la base de datos accediendo
+     * por el fichero de conexion a la base de datos
+     */
     public void conectar() throws ClassNotFoundException, SQLException, IOException {
 
         Properties configuration = new Properties();
@@ -42,13 +53,12 @@ public class RegisterDAO {
         conexion.close();
     }
 
-    public void addUser(Usuario user) {
-        String sql= "{call spNewUSer (?,?,?,?,?,?,?,?)}";
-        
-
-
-    }
- public void addUsuario(Usuario user) throws SQLException {
+    /**
+     *
+     * @param user
+     * @throws SQLException Metodo para añadir usuario
+     */
+    public void addUsuario(Usuario user) throws SQLException {
         String sql = "{call spNewUser (?,?,?,?,?,?,?,?,?)}";
         PreparedStatement sentencia = conexion.prepareStatement(sql);
         sentencia.setInt(1, user.getCodigo_usuarios());

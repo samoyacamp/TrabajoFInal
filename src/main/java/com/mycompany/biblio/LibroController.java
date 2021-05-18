@@ -75,36 +75,39 @@ public class LibroController {
     @FXML
     private ImageView imagen3;
 
-    
+    /**
+     *
+     * @throws IOException Boton que nos cambia de pantalla a la principal
+     */
     @FXML
     private void sesion() throws IOException {
         App.setRoot("primary");
 
     }
 
+    /**
+     * Boton que sirve para añadir libros, despues de haber introducido todos
+     * los valores de libros
+     */
     @FXML
     private void addl() {
         try {
-//    private int id;
-//    private String nombre;
-//    private String editorial;
-//    private String autor;
-//    private String genero;
-//    private Date fecha;
-//    private double precio;
-//    private String saga;
-// genero.getValue().toString()//
+
             ldao.insertarLibro(new Libros(Integer.parseInt(id.getText()), nombre.getText(), editorial.getText(), autor.getText(),
                     genero.getValue().toString(),
-                    Date.valueOf(fecha.getValue()), Double.parseDouble(precio.getText()), saga.getText(), Integer.parseInt(prestamo.getText())));
+                    Date.valueOf(fecha.getValue()), Float.parseFloat(precio.getText()), saga.getText(), Integer.parseInt(prestamo.getText())));
             initLists();
         } catch (SQLException ex) {
-            AlertsUtil.mostrarError("Error al modificar la ruta seleccionada. " + ex.getMessage());
+            AlertsUtil.mostrarError("Error al modificar el libro seleccionada. ");
 
         }
 
     }
 
+    /**
+     * Boton que modifica el libro despues de haber rellenado todos los campos
+     * para guardarlo
+     */
     @FXML
     private void savel() {
         librosSel = (Libros) listaLibro.getSelectionModel().getSelectedItem();
@@ -114,17 +117,10 @@ public class LibroController {
             return;
         }
         try {
-//    private int id;
-//    private String nombre;
-//    private String editorial;
-//    private String autor;
-//    private String genero;
-//    private Date fecha;
-//    private double precio;
-//    private String saga;
+
             ldao.modificarLibro(new Libros(Integer.parseInt(id.getText()), nombre.getText(), editorial.getText(), autor.getText(),
                     genero.getValue().toString(), Date.valueOf(fecha.getValue()), Double.parseDouble(precio.getText()), saga.getText(),
-                     Integer.parseInt(prestamo.getText())));
+                    Integer.parseInt(prestamo.getText())));
             initLists();
         } catch (SQLException ex) {
             AlertsUtil.mostrarError("Error al modificar el libro seleccionado");
@@ -132,6 +128,10 @@ public class LibroController {
 
     }
 
+    /**
+     * Boton que sirve para borrar el libro, despues de haberlo seleccionado y
+     * haber aceptado el alert que aperece
+     */
     @FXML
     private void deletel() {
         librosSel = (Libros) listaLibro.getSelectionModel().getSelectedItem();
@@ -156,12 +156,19 @@ public class LibroController {
 
     }
 
+    /**
+     *
+     * @param u Constructor de la clase libro controller
+     */
     public LibroController(Usuario u) {
         user = u;
         conectarBD();
 
     }
 
+    /**
+     * Metodo para conectar con la base de datos
+     */
     private static void conectarBD() {
         ldao = new LibroDAO() {
         };
@@ -177,37 +184,9 @@ public class LibroController {
 
     }
 
-    private void cargarLibro(Libros libro) {
-
-//    private int id;
-//    private String nombre;
-//    private String editorial;
-//    private String autor;
-//    private String genero;
-//    private Date fecha;
-//    private double precio;
-//    private String saga;
-        Integer.parseInt(id.getText());
-        nombre.setText(libro.getNombre());
-        editorial.setText(libro.getEditorial());
-        autor.setText(libro.getAutor());
-        genero.getValue().toString();
-        Date.valueOf(fecha.getValue());
-        Double.parseDouble(precio.getText());
-
-    }
-
-    private void limpiarLibro(Libros libro) {
-        id.setId("");
-        nombre.setText("");
-        editorial.setText("");
-        autor.setText("");
-        genero.setValue(0);
-        fecha.setValue(java.time.LocalDate.now());
-        precio.setText("");
-        saga.setText("");
-    }
-
+    /**
+     * Metodo para cargar el libro en la base de datos
+     */
     public void initLists() {
 
         genero.setItems(generoz);
@@ -222,6 +201,9 @@ public class LibroController {
         }
     }
 
+    /**
+     * Metodo para salir de la aplicacion
+     */
     @FXML
     public void salir() {
         try {
@@ -233,6 +215,9 @@ public class LibroController {
         }
     }
 
+    /**
+     * Metodo para cargar ficheros al programa Aún no funciona
+     */
     @FXML
     public void loadArticulosFromFile() {
         File fichero = null;
@@ -262,6 +247,9 @@ public class LibroController {
         }
     }
 
+    /**
+     * Carga de imagen
+     */
     public void loadImage() {
         Image img;
         try {
@@ -272,7 +260,11 @@ public class LibroController {
             imagen1.setImage(img);
         }
     }
-     public void loadImage1() {
+
+    /**
+     * Carga de imagen
+     */
+    public void loadImage1() {
         Image img;
         try {
             img = new Image(new FileInputStream(new File(System.getProperty("user.dir") + "/images/error.jpg")));
@@ -282,7 +274,11 @@ public class LibroController {
             imagen2.setImage(img);
         }
     }
-      public void loadImage2() {
+
+    /**
+     * Carga de imagen
+     */
+    public void loadImage2() {
         Image img;
         try {
             img = new Image(new FileInputStream(new File(System.getProperty("user.dir") + "/images/error.jpg")));
